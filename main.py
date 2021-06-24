@@ -1,31 +1,30 @@
 import time
 import re
 from re import *
-import webbrowser
-
 
 def test():
 
     main_input = input("> ").casefold()
-        #.casefold() return all lower case
+        #.casefold() == all lower case
     question1 = r'cookie'
-            #R is called a raw string literal. to  prevent characters from being interpreted as escape sequences
+            #R == raw.  
     question2 = 'milk'
     if re.match('co.kie', main_input):
         print('yes. it is a cookie, what now?')
         print('works for "CO[any word]KIE')
+        # . == any word
 
-        # What is the word?
     elif re.match('mi+lk', main_input):
         print('ok, milk')
         print('works for Miiiiiiiiiilk')
+        # + any number of words
 
     elif re.search(r'^eat', main_input) and re.search(r'co.kie', main_input):
         print('EAT COOKIE')
         print('works for CO[any word]KIE')
         print('but dont for COOKIE EAT')
-        # ^ first word
-        # $ las word
+        # ^ == first word
+        # $ == las word
 
     elif re.search(r'^drink', main_input) and re.search(r'mi+lk', main_input):
         print('DRINK MILK')
